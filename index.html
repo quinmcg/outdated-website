@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quin.McG</title>
+    <style type="text/css">
+        body {
+            margin: 0 0 150px 0;
+            background: #34667e;
+            height: 700px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            text-align: center;
+        }
+
+        .slantedDiv{
+            position: relative;
+            width: 100%;
+            height: 0;
+            background-color: #131313;
+            padding: 0;
+        }
+
+        .slantedDiv:after{
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 300px;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            background: inherit;
+            transform-origin: top left;
+            transform: skewY(27deg);
+            z-index: -1;
+        }
+
+        /*.slantedDiv
+        {
+            position:relative;
+            width:100%;
+            height:815px;
+            background-color: #29dd00;
+            background-size:cover;
+            text-align:center;
+            background-position:center top;
+            padding:30px;
+        }
+
+        .slantedDiv:after
+        {
+            position:absolute;
+            content:'';
+            width:100%;
+            height:100%;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            background:inherit;
+            transform-origin:top left;
+            transform:skewY(30deg);    /*it will tilt the div
+            z-index:-1; /* to send it backward of real div
+        }*/
+
+        .menu{
+            opacity: .7;
+            width: 50px;
+            height: 50px;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            border-bottom-left-radius: 15px;
+            text-align: center;
+            position: relative;
+            background-color: #0ED2F7;
+            transition: width 500ms linear;
+        }
+
+        .menu:hover{
+            width: 100%;
+        }
+
+        .connects{
+            list-style: none;
+            display: none;
+        }
+
+        .connects
+
+        .container {
+            margin: 50px auto 0 auto;
+            width: 1000px;
+            padding: 20px;
+            color: #f9fcf8;
+            font-size: 39px;
+        }
+
+        .text-color {
+            color: #65c5f3;
+        }
+
+        a {
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            padding-bottom: 3px;
+            color: #65c5f3;
+        }
+
+        a:after{
+            content: '';
+            display: block;
+            margin: auto;
+            height: 2px;
+            background: transparent;
+            transition: width 600ms ease-in-out, background-color 600ms ease-in-out;
+        }
+
+        a:hover:after {
+            width: 100%;
+            background: #65c5f3;
+        }
+        p {
+            color: #f9fcf8;
+            font-weight: bold;
+            margin: 130px 0 0 0;
+        }
+        .whatido {
+            margin: 50px 0 0 0;
+            color: #f9fcf8;
+        }
+        .shortTop {
+            margin: 15px 0 0 0;
+        }
+        .contactMe {
+            margin: 22px 0 0 0;
+        }
+        .big {
+            font-size: 65px;
+        }
+        .medium {
+            font-size: 45px;
+        }
+        .small {
+            font-size: 16px;
+        }
+        .copyright-container {
+            margin-bottom: 0;
+        }
+        .copyright {
+            font-weight: normal !important;
+            color: #f9fcf8;
+        }
+        #breakers{
+            color: #f9fcf8;
+        }
+
+        /*
+            typed.js css
+            http://www.mattboldt.com/demos/typed-js/
+        */
+        . typed-cursor {
+            opacity: 1;
+            color: #1c117a;
+            -webkit-animation: blink 0.7s infinite;
+            -moz-animation: blink 0.7s infinite;
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-webkit-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-moz-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="body">
+        <div class="slantedDiv">
+
+        </div>
+        <div class="menu">
+            <ul class="connects">
+                <li><a href="http://www.youtube.com/channel/UCto4UBWbCLfV1YHmUDqHivw">YouTube</a></li>
+                <li><a href="https://open.spotify.com/user/q.mcg">Spotify</a></li>
+                <li><a href="https://www.quinmcg.me/portfolio">Project Portfolio</a></li>
+            </ul>
+        </div>
+        <div class="container shown" id="home">
+            <p class="big">I'm <span class="text-color">Quin.McG</span></p>
+            <p class="medium whatido">I am <span style="color: #65c5f3" id="whatido"></span></p>
+        </div>
+
+        <div class="container" id="contact" style="display: none;">
+            <p class="big">You can email me at</p>
+            <a href="mailto:contact@quinmcg.me" class="big contactMe">contact@quinmcg.me</a>
+        </div>
+
+        <div class="container" id="libraries" style="display: none;">
+            <p class="medium">I used libraries to make this website look cool.</p>
+            <p class="medium shortTop"><a href="https://github.com/mattboldt/typed.js/" class="medium">Typed.js</a> | <a href="https://jquery.com/" class="medium">jQuery</a></p>
+        </div>
+
+        <div class="links">
+            <p class="medium" id="breakers"><a href="#" class="clickable" data-click="#home">Home</a> | <a href="#" class="clickable" data-click="#contact">Contact</a> | <a href="#" class="clickable" data-click="https://quinmcg.me/go/github">Github</a></p>
+        </div>
+        <div class="copyright-container" id="copyright">
+            <p class="small copyright">&copy; Copyright, 2017, <a href="#" class="clickable" data-click="#home">QuinMcG</a>. Made with <a href="#" class="clickable" data-click="#libraries">various libraries</a>. Open source on <a href="#" class="clickable" data-click="https://quinmcg.github.io/quinmcg.github.io">GitHub</a> </p>
+        </div>
+
+
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/typed.min.js"></script>
+        <script>
+            $(function () {
+                $("#whatido").typed({
+                    loop: false,
+                    strings: ["a student", "an entrepreneur", "an athlete", "a writer", "a film maker", "one of a kind."],
+                    typeSpeed: 15,
+                    backDelay: 1000,
+                    backSpeed: 20
+                });
+            });
+            $('.clickable').click(function (event) {
+                var clickedElement = $(event.target);
+                var click = clickedElement.attr('data-click');
+                if(click == null){
+                    return;
+                }
+                event.preventDefault();
+                var home = $('#home');
+                if(click.indexOf('#') == 0){
+                    // local
+                    var newTile = $(click);
+                    if(newTile.hasClass('shown')){
+                        newTile.hide();
+                        newTile.removeClass('shown');
+                        home.show();
+                        home.addClass('shown');
+                    } else {
+                        if(home.hasClass('shown')){
+                            home.hide();
+                            home.removeClass('shown');
+                        } else {
+                            var currentTile = $('.shown');
+                            currentTile.hide();
+                            currentTile.removeClass('shown');
+                        }
+                        newTile.show();
+                        newTile.addClass('shown');
+                    }
+                } else {
+                    window.open(click, '_blank');
+                }
+            });
+        </script>
+
+</body>
+</html>
